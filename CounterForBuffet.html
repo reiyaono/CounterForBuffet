@@ -1,0 +1,58 @@
+
+<html>
+<head>
+ <tittle>店舗人数カウンター</tittle>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+
+<div id="counter">
+ <h1>
+  店舗人数カウンター
+ </h1>
+  <p>
+  男性の最大人数：{{male_max}}
+  <br><input v-model="male_max" placeholder="0" type="number">
+  <br>
+  女性の最大人数：{{female_max}}
+  <br><input v-model="female_max" placeholder="0" type="number">
+  </p>
+
+<p>男性:{{ male_counter }}名</p>
+  <button style="height:100px;width:100px" @click="male_counter += 1">+</button>
+  <button  style="height:100px;width:100px" @click="male_counter -= 1">-</button>
+
+  <span v-if="male_max === null ">nullやで！</span>
+    <span v-if="male_counter > male_max">
+      <font color="red">{{male_max}}名を超えました</font>
+    </span>
+  </span>
+
+    <p>女性:{{ female_counter }}名</p>
+    <button style="height:100px;width:100px" @click="female_counter += 1">+</button>
+    <button  style="height:100px;width:100px" @click="female_counter -= 1">-</button>
+  
+   <span v-if="female_counter > female_max">
+    <font color="red">{{female_max}}名を超えました</font>
+  </span>
+  
+  <p>合計:{{ male_counter + female_counter }}名</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+  <script type="text/javascript">
+    var vm = new Vue({
+  el: '#counter',
+  data: {
+    male_counter: 0,
+    female_counter: 0,
+    male_max:10,
+    female_max:10,
+  }
+})
+  </script>
+
+</body>
+
+</html>

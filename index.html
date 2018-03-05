@@ -1,6 +1,5 @@
 <html>
 <head>
- <tittle>店舗人数カウンター</tittle>
  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
@@ -13,9 +12,10 @@
   crossorigin="anonymous"></script>
 
 <div id="counter">
- <h1>
+  <div class="container">
+ <h2>
   店舗人数カウンター
- </h1>
+ </h2>
   <p>
   男性の最大人数：{{male_max}}
   <br><input v-model="male_max" placeholder="0" type="number">
@@ -24,25 +24,37 @@
   <br><input v-model="female_max" placeholder="0" type="number">
   </p>
 
+
+
+  <div class="countainer">
 <p>男性:{{ male_counter }}名</p>
-  <button class="btn btn-primary btn-lg" @click="male_counter += 1">+</button>
-  <button  class="btn btn-primary btn-lg" @click="male_counter -= 1">-</button>
+  <button class="btn btn-primary btn-lg mx-auto" style="width: 200px;" @click="male_counter += 1">+</button>
+  <button  class="btn btn-primary btn-lg mx-auto" style="width: 200px;" @click="male_counter -= 1">-</button>
 
 
     <span v-if="male_counter > male_max">
       <font color="red">{{male_max}}名を超えました</font>
     </span>
+    </div>
 
-    <p>女性:{{ female_counter }}名</p>
-    <button class="btn btn-primary btn-lg" @click="female_counter += 1">+</button>
-    <button  class="btn btn-primary btn-lg" @click="female_counter -= 1">-</button>
+
+
+
+
+
+    <div class="countainer">
+      <p>女性:{{ female_counter }}名</p>
+    <button class="btn btn-primary btn-lg center-block" @click="female_counter += 1">+</button>
+    <button  class="btn btn-primary btn-lg center-block" @click="female_counter -= 1">-</button>
   
-   <span v-if="female_counter > female_max">
-    <font color="red">{{female_max}}名を超えました</font>
-  </span>
-  
-  <p>合計:{{ male_counter + female_counter }}名</p>
-  
+    <span v-if="female_counter > female_max">
+      <font color="red">{{female_max}}名を超えました</font>
+    </span>
+  </div>
+    
+  <p class="row">合計:{{ male_counter + female_counter }}名</p>
+
+  </div>
 </div>
 
 

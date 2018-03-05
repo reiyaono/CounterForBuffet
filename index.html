@@ -1,10 +1,16 @@
-
 <html>
 <head>
  <tittle>店舗人数カウンター</tittle>
+ <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D"
+  crossorigin="anonymous"></script>
 
 <div id="counter">
  <h1>
@@ -19,24 +25,24 @@
   </p>
 
 <p>男性:{{ male_counter }}名</p>
-  <button style="height:100px;width:100px" @click="male_counter += 1">+</button>
-  <button  style="height:100px;width:100px" @click="male_counter -= 1">-</button>
+  <button class="btn btn-primary btn-lg" @click="male_counter += 1">+</button>
+  <button  class="btn btn-primary btn-lg" @click="male_counter -= 1">-</button>
 
-  <span v-if="male_max === null ">nullやで！</span>
+
     <span v-if="male_counter > male_max">
       <font color="red">{{male_max}}名を超えました</font>
     </span>
-  </span>
 
     <p>女性:{{ female_counter }}名</p>
-    <button style="height:100px;width:100px" @click="female_counter += 1">+</button>
-    <button  style="height:100px;width:100px" @click="female_counter -= 1">-</button>
+    <button class="btn btn-primary btn-lg" @click="female_counter += 1">+</button>
+    <button  class="btn btn-primary btn-lg" @click="female_counter -= 1">-</button>
   
    <span v-if="female_counter > female_max">
     <font color="red">{{female_max}}名を超えました</font>
   </span>
   
   <p>合計:{{ male_counter + female_counter }}名</p>
+  
 </div>
 
 

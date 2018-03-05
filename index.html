@@ -63,14 +63,17 @@
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
     <script type="text/javascript">
 
-      let lastTouch = 0;
-        document.addEventListener('touchend', event => {
-          const now = window.performance.now();
-          if (now - lastTouch <= 400) {
-            event.preventDefault();
-          }
-          lastTouch = now;
-        }, true);
+     let flag = false;
+      document.addEventListener('touchend', event => {
+        if (flag) {
+          event.preventDefault();
+        } else {
+          flag = true;
+          setTimeout(() => {
+            flag = false;
+          }, 500);
+        }
+      }, true);
 
         var vm = new Vue({
         el: '#counter',

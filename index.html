@@ -1,6 +1,6 @@
 <html>
 <head>
- <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
@@ -27,9 +27,10 @@
 
 
   <div class="countainer">
-<p>男性:{{ male_counter }}名</p>
-  <button class="btn btn-primary btn-lg mx-auto" style="width: 200px;" @click="male_counter += 1">+</button>
-  <button  class="btn btn-primary btn-lg mx-auto" style="width: 200px;" @click="male_counter -= 1">-</button>
+    <br>
+  <h3><p>男性:{{ male_counter }}名</p></h3>
+  <button class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="male_counter += 1">+</button>
+  <button  class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="male_counter -= 1">-</button>
 
 
     <span v-if="male_counter > male_max">
@@ -43,16 +44,18 @@
 
 
     <div class="countainer">
-      <p>女性:{{ female_counter }}名</p>
-    <button class="btn btn-primary btn-lg center-block" @click="female_counter += 1">+</button>
-    <button  class="btn btn-primary btn-lg center-block" @click="female_counter -= 1">-</button>
+      <br>
+      <h3><p>女性:{{ female_counter }}名</p></h3>
+    <button class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="female_counter += 1">+</button>
+    <button  class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="female_counter -= 1">-</button>
   
     <span v-if="female_counter > female_max">
       <font color="red">{{female_max}}名を超えました</font>
     </span>
   </div>
     
-  <p class="row">合計:{{ male_counter + female_counter }}名</p>
+  <br>
+  <h3><p class="row">合計:{{ male_counter + female_counter }}名</p></h2>
 
   </div>
 </div>

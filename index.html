@@ -32,9 +32,9 @@
   <button class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="male_counter += 1">+</button>
   <button  class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="male_counter -= 1">-</button>
 
-
+    <br>
     <span v-if="male_counter > male_max">
-      <font color="red">{{male_max}}名を超えました</font>
+      <font color="red" class="lead">{{male_max}}名を超えました</font>
     </span>
     </div>
 
@@ -48,9 +48,9 @@
       <h3><p>女性:{{ female_counter }}名</p></h3>
     <button class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="female_counter += 1">+</button>
     <button  class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="female_counter -= 1">-</button>
-  
+     <br>
     <span v-if="female_counter > female_max">
-      <font color="red">{{female_max}}名を超えました</font>
+      <font color="red" class="lead">{{female_max}}名を超えました</font>
     </span>
   </div>
     

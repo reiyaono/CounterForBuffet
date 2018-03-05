@@ -66,7 +66,7 @@
       let lastTouch = 0;
         document.addEventListener('touchend', event => {
           const now = window.performance.now();
-          if (now - lastTouch <= 300) {
+          if (now - lastTouch <= 400) {
             event.preventDefault();
           }
           lastTouch = now;

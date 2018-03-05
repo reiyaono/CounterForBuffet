@@ -59,12 +59,14 @@
       <!-- もし男女ともに満席以上なら満席と表示する -->
       
       <br>
-      <h4 v-if="(male_counter + female_counter) >= (female_max + male_max) ">LINE:満席</h4>
-      <h4 v-else>LINE:男{{male_max - male_counter}}女{{female_max - female_counter}}</h4>
+       LINE:
+      <h4 v-if="(male_counter + female_counter) >= (female_max + male_max) " class="copyTarget">満席</h4>
+      <h4 v-else class="copyTarget">男{{male_max - male_counter}}女{{female_max - female_counter}}</h4>
 
-      <p class="copyTarget">コピーしてもらいたいテキスト</p>
-      <button class="copyBtn">クリップボードにコピーする</button>
-
+      <button class="copyBtn btn btn-primary btn-lg mx-auto" style="width: 150px;">コピーする</button>
+      <div class="small">
+        (※このボタンを押してLINEに貼り付けてください。)
+      </div>
     </div>
    </div>
 

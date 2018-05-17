@@ -52,16 +52,15 @@
           <font color="red" class="lead">{{female_max}}名を超えました</font>
         </span>
      </div>
-    
+
       <br>
       <h3><p class="row">合計:{{ male_counter + female_counter }}名</p></h3>
 
 
       <hr>
        LINE:
-      <h4 v-if="(male_counter + female_counter) >= (female_max + male_max) " class="copyTarget">満席</h4>
-      <h4 v-else class="copyTarget">男{{male_max - male_counter}}女{{female_max - female_counter}}</h4>
-      <br>
+      <h4 v-if="(male_counter + female_counter) >= (female_max + male_max) "><div class="copyTarget">満席</div></h4>
+      <h4 v-else><div class="copyTarget">男{{male_max - male_counter}}女{{female_max - female_counter}}</div></h4>
       <button class="copyBtn btn btn-primary btn-lg mx-auto" style="width: 150px;">コピーする</button>
       <div class="small">
         ※このボタンを押せば空き人数がコピーできます<br>LINEに貼り付けてください。
@@ -107,6 +106,7 @@
           window.getSelection().removeAllRanges();
           window.getSelection().addRange(range);
           document.execCommand('copy');
+          alert('コピーしました。');
           return false;
         }
       document.querySelector('.copyBtn').addEventListener('click', copyText, false);

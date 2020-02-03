@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
   <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="index.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D"></script>
 </head>
@@ -19,18 +20,18 @@
 
       <br>
       <h3>男性:{{ maleCounter }}名</h3>
-      <button class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="maleCounter += 1">+</button>
-      <button  class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="maleCounter -= 1">-</button>
+      <button class="btn btn-primary btn-lg mx-auto button" @click="maleCounter += 1">+</button>
+      <button  class="btn btn-primary btn-lg mx-auto button" @click="maleCounter -= 1">-</button>
       <div v-if="isExceedMaleLimit">
-        <span style="color: red;" class="lead">{{ maleMax }}名を超えました</span>
+        <span class="warning">{{ maleMax }}名を超えました</span>
       </div>
 
       <br>
       <h3>女性:{{ femaleCounter }}名</h3>
-      <button class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="femaleCounter += 1">+</button>
-      <button  class="btn btn-primary btn-lg mx-auto" style="width: 150px;" @click="femaleCounter -= 1">-</button>
+      <button class="btn btn-primary btn-lg mx-auto button" @click="femaleCounter += 1">+</button>
+      <button  class="btn btn-primary btn-lg mx-auto button" @click="femaleCounter -= 1">-</button>
       <div v-if="isExceedFemaleLimit">
-        <span style="color: red;" class="lead">{{ femaleMax }}名を超えました</span>
+        <span class="warning">{{ femaleMax }}名を超えました</span>
       </div>
       <br>
       <h3><p class="row">合計:{{ sum }}名</p></h3>
@@ -38,7 +39,7 @@
       LINE:
       <h4 v-if="isExceedLimit"><div class="copyTarget">満席</div></h4>
       <h4 v-else><div class="copyTarget">男{{ availableMale }} 女{{ availableFemale }}</div></h4>
-      <button class="copyBtn btn btn-primary btn-lg mx-auto" style="width: 150px;">コピーする</button>
+      <button class="copyBtn btn btn-primary btn-lg mx-auto" class="bottom">コピーする</button>
       <div class="small">
         ※このボタンを押せば空き人数がコピーできます<br>LINEに貼り付けてください。
       </div>
